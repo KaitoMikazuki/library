@@ -16,9 +16,12 @@ function Book(title, author, pages, read,id){
 
 function addBookToLibrary(){
     let id = crypto.randomUUID();
-
 }
 
 function displayOnPage(){
     // display on page
+}
+
+function openBookForm(){
+    // Will display the form to add a book
 }
