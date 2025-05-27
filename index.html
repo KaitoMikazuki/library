@@ -6,32 +6,41 @@
     <title>Document</title>
 </head>
 <body>
-    <table>
-        <thead>
-            <tr>
-                <th scope="col">Title</th>
-                <th scope="col">Author</th>
-                <th scope="col">Pages</th>
-                <th scope="col">Read</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>Harry Potter</td>
-                <td>J.K. Rowling</td>
-                <td>300</td>
-                <td><button class="status">Completed</button></td>
-                <td><button class="remove">x</button></td>
-            </tr>
-            <tr>
-                <td>Harry Potter</td>
-                <td>J.K. Rowling</td>
-                <td>300</td>
-                <td><button class="status">Completed</button></td>
-                <td><button class="remove">x</button></td>
-            </tr>
-        </tbody>
-    </table>
-        <button>Add book</button>
+    <div class="container">
+        <table>
+            <thead>
+                <tr>
+                    <th scope="col">Title</th>
+                    <th scope="col">Author</th>
+                    <th scope="col">Pages</th>
+                    <th scope="col">Read</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Harry Potter</td>
+                    <td>J.K. Rowling</td>
+                    <td>300</td>
+                    <td><button class="status">Not Read</button></td>
+                    <td><button class="remove">x</button></td>
+                </tr>
+                <tr>
+                    <td>Atomic Habits</td>
+                    <td>James Clear</td>
+                    <td>317</td>
+                    <td><button class="status">Read</button></td>
+                    <td><button class="remove">x</button></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <button id="addBook">Add book</button>
+        <dialog id="bookFormWindow">
+            <form id="bookForm" method="dialog">
+                
+            </form>
+        </dialog>    
+    </div>
+    <script src="library.js"></script> 
 </body>
 </html>

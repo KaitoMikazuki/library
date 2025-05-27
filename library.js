@@ -1,5 +1,15 @@
 const myLibrary = [];
 
+function main(){
+    // Examples
+    const harry_potter = new Book("Harry Potter and the Sorcerer's Stone",'J.K. Rowling','223',false, crypto.randomUUID);
+    const atomic_habits = new Book("Atomic Habits", 'James Clear', '320', true, crypto.randomUUID);
+    myLibrary.push(harry_potter, atomic_habits);
+
+    bookFormWindow = document.getElementById("bookFormWindow");
+    document.getElementById("addBook").addEventListener('click', () => openBookForm(bookFormWindow))
+}
+
 function Book(title, author, pages, read,id){
     if (!new.target) {
         throw Error("You must use the 'new' operator to call the constructor");
@@ -10,8 +20,12 @@ function Book(title, author, pages, read,id){
     this.read = read;
     this.id = id;
     this.info = function(){
-        return `${this.title} by ${this.author}, ${this.pages}, pages, ${this.read} `
+        return `${this.title} by ${this.author}, ${this.pages}, pages, ${this.read}`
     }
+}
+
+function openBookForm(bookFormWindow){
+    bookFormWindow.showModal();
 }
 
 function addBookToLibrary(){
@@ -22,6 +36,9 @@ function displayOnPage(){
     // display on page
 }
 
-function openBookForm(){
-    // Will display the form to add a book
+
+function convertToLibraryItem(title){
+
 }
+
+main();
