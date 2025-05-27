@@ -8,9 +8,10 @@ function main(){
 
     bookFormWindow = document.getElementById("bookFormWindow");
     document.getElementById("addBook").addEventListener('click', () => openBookForm(bookFormWindow))
+    document.getElementById("bookForm").addEventListener('submit', addBookToLibrary)
 }
 
-function Book(title, author, pages, read,id){
+function Book(title, author, pages, read, id){
     if (!new.target) {
         throw Error("You must use the 'new' operator to call the constructor");
       }
@@ -28,8 +29,13 @@ function openBookForm(bookFormWindow){
     bookFormWindow.showModal();
 }
 
-function addBookToLibrary(){
-    let id = crypto.randomUUID();
+function addBookToLibrary(event){
+    event.preventDefault();
+    const bookData = new FormData(event.target);
+
+    // Creates New book object with complete parameters
+    const book = new Book(bookData.get('title'), bookData.get('author'), bookData.get('pages'), (bookData.get('status') !== null), crypto.randomUUID())
+    console.log(book)
 }
 
 function displayOnPage(){

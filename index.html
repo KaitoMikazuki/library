@@ -36,33 +36,35 @@
         </table>
 
         <button id="addBook" class="btn">Add book</button>
-        <dialog id="bookFormWindow" class="window">
-            <form id="bookForm" method="dialog">
-                <div>
-                    <label for="title">Title</label>
-                    <input type="text" class="bookData" id="title" required>
-                </div>
-                <div>
-                    <label for="author">Author</label>
-                    <input type="text" class="bookData" id="author" name="author">
-                </div>
-                <div>
-                    <label for="pages">Pages</label>
-                    <input type="text" class="bookData" id="pages" name="pages">
-                </div>
-                <div>
-                    <label for="status">Have Read?</label>
-                    <input type="checkbox" id="status" name="status">
-                </div>
-                <div>
-                    <div class="action-btns">
-                        <button>Cancel</button>
-                        <button>Confirm</button>
-                    </div>
-                </div>
-            </form>
-        </dialog>    
     </div>
+
+    <!-- Add Book Section -->
+    <dialog id="bookFormWindow" class="window">
+        <form id="bookForm">
+            <div>
+                <label for="title">Title</label>
+                <input type="text" class="bookData" id="title" name="title"required>
+            </div>
+            <div>
+                <label for="author">Author</label>
+                <input type="text" class="bookData" id="author" name="author">
+            </div>
+            <div>
+                <label for="pages">Pages</label>
+                <input type="text" class="bookData" id="pages" name="pages">
+            </div>
+            <div>
+                <label for="status">Have Read?</label>
+                <input type="checkbox" id="status" name="status" value="read">
+            </div>
+            <div>
+                <div class="action-btns">
+                    <button id="close">Close</button>
+                    <button id="confirm" type="submit">Confirm</button>
+                </div>
+            </div>
+        </form>
+    </dialog>    
     <script src="library.js"></script> 
 </body>
 </html>
