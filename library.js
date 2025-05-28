@@ -2,16 +2,17 @@ const myLibrary = [];
 
 function main(){
     // For demo purposes
-    const example1 = new Book("Harry Potter and the Sorcerer's Stone",'J.K. Rowling','223',false, crypto.randomUUID);
-    const example2 = new Book("Atomic Habits", 'James Clear', '320', true, crypto.randomUUID);
+    const example1 = new Book("Harry Potter and the Sorcerer's Stone",'J.K. Rowling','223',false, crypto.randomUUID());
+    const example2 = new Book("Atomic Habits", 'James Clear', '320', true, crypto.randomUUID());
     myLibrary.push(example1, example2);
     displayOnPage();
 
     // Add book buttons
     bookFormWindow = document.getElementById("bookFormWindow");
-    document.getElementById("addBook").addEventListener('click', () => bookFormWindow.showModal())
-    document.getElementById("close").addEventListener('click', () => bookFormWindow.close())
-    document.getElementById("bookForm").addEventListener('submit', addBookToLibrary)
+    document.getElementById("addBook").addEventListener('click', () => bookFormWindow.showModal());
+    document.getElementById("close").addEventListener('click', () => bookFormWindow.close());
+    document.getElementById("bookForm").addEventListener('submit',  addBookToLibrary); 
+    document.querySelector(".bookList").addEventListener('click', identifyClick); // event delegation
 }
 
 function Book(title, author, pages, read, id){
@@ -65,7 +66,7 @@ function displayOnPage(){
     myLibrary.forEach((book) => {
         const status = book.read ? "Read" : "Not read";
         bookList.insertAdjacentHTML('beforeend', `
-            <tr class="book" id="${book.id}">
+            <tr class="book" data-id="${book.id}">
                 <td class="title">${book.title}</td>
                 <td class="author">${book.author}</td>
                 <td class="pages">${book.pages}</td>
@@ -74,5 +75,25 @@ function displayOnPage(){
             </tr>
         `)
     })
+}
+
+function identifyClick(event){
+    if (event.target.classList.contains('remove')){
+        const bookId = event.target.closest('tr').getAttribute('data-id');
+        removeFromArray(bookId);
+        displayOnPage();
+    }
+    // else if () // if read toggle is clicked
+    //     console.log("yaa")
+    // else {
+    //     return
+    // }
+    displayOnPage();
+
+}
+
+function removeFromArray(id){
+    let removeIndex = myLibrary.findIndex((bookItem) => bookItem.id === id)
+    myLibrary.splice(removeIndex, 1);
 }
 main();
