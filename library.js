@@ -78,22 +78,36 @@ function displayOnPage(){
 }
 
 function identifyClick(event){
+    // If remove button clicked
     if (event.target.classList.contains('remove')){
         const bookId = event.target.closest('tr').getAttribute('data-id');
         removeFromArray(bookId);
-        displayOnPage();
-    }
-    // else if () // if read toggle is clicked
-    //     console.log("yaa")
-    // else {
-    //     return
-    // }
-    displayOnPage();
 
+    }
+
+    // If status button clicked
+    else if (event.target.classList.contains('status')){
+        const bookId = event.target.closest('tr').getAttribute('data-id');
+        toggleStatus(bookId);
+    }
+
+    else {
+        return
+    }
+
+    displayOnPage();
 }
 
 function removeFromArray(id){
     let removeIndex = myLibrary.findIndex((bookItem) => bookItem.id === id)
     myLibrary.splice(removeIndex, 1);
+}
+
+function toggleStatus(id){
+    let toggleIndex = myLibrary.findIndex((bookItem) => bookItem.id === id);
+    if (toggleIndex === -1){
+        console.error("Library item not found! Stop messing with the code ts pmo");
+    }
+    myLibrary[toggleIndex].read = !myLibrary[toggleIndex].read
 }
 main();
