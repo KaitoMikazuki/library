@@ -19,17 +19,33 @@ function Book(title, author, pages, read, id){
       }
     this.title = title;
     this.author = author || "Unkown";
-    this.pages = pages;
+    this.pages = pages || "n/a";
     this.read = read;
     this.id = id;
     this.info = function(){
-        return `${this.title} by ${this.author}, ${this.pages}, pages, ${this.read}`
+        return `${this.title} by ${this.author}, ${this.pages} pages, ${this.read}`
     }
 }
 
 function addBookToLibrary(event){
     event.preventDefault();
     const bookData = new FormData(event.target);
+
+    // Validates the information being submitted by the user
+    if (!/^[A-Za-z0-9 ]{1,100}$/.test(bookData.get('title'))){
+        alert("Invalid title");
+        return
+    }
+
+    else if (!/^[A-Za-z ]{0,100}$/.test(bookData.get('author'))){
+        alert("Invalid author");
+        return
+    }
+
+    else if (!/^[0-9 ]{0,5}$/.test(bookData.get('pages'))){
+        alert("Invalid page number");
+        return
+    }
 
     // Creates New book object with complete parameters
     const book = new Book(bookData.get('title'), bookData.get('author'), bookData.get('pages'), (bookData.get('status') !== null), crypto.randomUUID())
@@ -42,7 +58,6 @@ function addBookToLibrary(event){
 }
 
 function displayOnPage(){
-    // display on page
+    myLibrary.forEach()
 }
-
 main();
