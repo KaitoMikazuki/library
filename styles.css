@@ -11,6 +11,14 @@ html{
     --color4: #B2D8CE;
 }
 
+a{
+    text-decoration: none;
+    color: white
+}
+
+li {
+    list-style: none;
+}
 
 
 /* Dialog section */
@@ -51,3 +59,47 @@ html{
 }
 
 /* navbar section */
+.navbar{
+    background-color: var(--color3);
+    height: 10vh;
+    padding: 2vh 32px;
+    display: flex;
+    align-items: center;
+    font-family: 'Bebas Neue';
+    position: sticky;
+    top:0;
+}
+
+.logo{
+    color: white;
+    margin-right: auto;
+    font-size: 2.5rem;
+
+}
+
+.navbar > ul {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap:2rem
+}
+
+.nav-item {
+    display: grid;
+    align-items: end;
+    grid-template-columns: 1.5rem 1fr;
+    gap:4px;
+    padding-right: 4px;
+}
+
+.nav-item:hover:nth-child(n+2){
+    background-color: var(--color2);
+    cursor: pointer;
+}
+
+
+.nav-item > img{
+    width: 1.5rem;
+    height: auto;
+    filter: invert(98%) sepia(2%) saturate(0%) hue-rotate(217deg) brightness(101%) contrast(106%);
+}
