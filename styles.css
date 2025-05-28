@@ -4,6 +4,14 @@
     margin: 0;
 }
 
+html{
+    --color1: #52357B;
+    --color2: #5459AC;
+    --color3: #648DB3;
+    --color4: #B2D8CE;
+}
+
+
 
 /* Dialog section */
 .window{
@@ -41,3 +49,5 @@
     border-radius: 8px;
     padding: 0.25rem 0.5rem;
 }
+
+/* navbar section */
