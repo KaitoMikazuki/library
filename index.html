@@ -7,7 +7,16 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
+    <!-- help, user info, browse -->
+    <nav class="navbar">
+        <ul>
+            <h1 class="logo">Javascript Library</h1>
+            <li class="nav-item"><img src="resources/magnify.svg" alt="search icon"><a href="https://www.goodreads.com/">Browse</a></li>
+            <li class="nav-item"><img src="resources/help-circle-outline.svg" alt="help icon"><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Help</a></li>
+            <li class="nav-item"><img src="resources/account.svg" alt=""><a href="">admin</a></li>
+        </ul>
+    </nav>
+    <main class="container">
         <table>
             <thead>
                 <tr>
@@ -23,7 +32,7 @@
         </table>
 
         <button id="addBook" class="btn">Add book</button>
-    </div>
+    </main>
 
     <!-- Add Book Section -->
     <dialog id="bookFormWindow" class="window">
