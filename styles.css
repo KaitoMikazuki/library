@@ -1,7 +1,26 @@
+.montserrat-regular {
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.roboto-regular {
+    font-family: "Roboto", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings:
+        "wdth": 100;
+}
+
+
+
 *{
     box-sizing: border-box;
     padding: 0;
     margin: 0;
+    font-family: "Montserrat";
 }
 
 html{
@@ -36,6 +55,24 @@ body {
     background-color: ;
 }
 
+#addBook{
+    padding: 16px 64px;
+    margin-bottom: 16px;
+    background-color: white;
+    border: none;
+    border-radius: 16px;
+    box-shadow: 0 0 2px black;
+}
+
+#addBook:hover{
+    cursor: pointer;
+    background-color: lightgray;
+}
+
+#addBook:active{
+    box-shadow: 0 0 4px inset;
+}
+
 /* Table section */
 table{
     background-color: var(--color2);
@@ -44,6 +81,13 @@ table{
     border-collapse: collapse;
     border: var(--table-borders);
 }
+
+caption{
+    font-family: "Roboto";
+    font-size: 3rem;
+    padding: 0.5rem;
+}
+
 /* Table header column widths */
 thead th:nth-child(1){
     width: 35%;
@@ -85,9 +129,13 @@ tbody td:not(:last-child) /* excludes remove button from padding*/ {
     box-shadow: 0 0 2px black;
 }
 
-.status:active{
+.status:hover{
+    cursor: pointer;
     background-color: lightgray;
-    box-shadow: 0 0 2px inset black;
+}
+
+.status:active{
+    box-shadow: 0 0 4px inset black;
 }
 
 /* Remove buton */
@@ -100,9 +148,13 @@ tbody td:not(:last-child) /* excludes remove button from padding*/ {
     box-shadow: 0 0 2px black;
 }
 
-.remove:active{
+.remove:hover{
+    cursor: pointer;
     background-color: lightgray;
-    box-shadow: 0 0 2px inset black;
+}
+
+.remove:active{
+    box-shadow: 0 0 4px inset black;
 }
 
 /* Dialog section */
@@ -110,10 +162,11 @@ tbody td:not(:last-child) /* excludes remove button from padding*/ {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    height: 20vh;
-    width: 20vw;
+    height: 25vh;
+    width: 25vw;
     min-width: 300px;
     min-height: 150px;
+    padding: 4vh;
 }
 
 #bookForm{
@@ -127,7 +180,7 @@ tbody td:not(:last-child) /* excludes remove button from padding*/ {
 
 #bookForm > div{
     display: grid;
-    grid-template-columns: 80px 1fr;
+    grid-template-columns: 100px 1fr;
 }
 
 .action-btns{
@@ -151,16 +204,18 @@ tbody td:not(:last-child) /* excludes remove button from padding*/ {
     padding: 2vh 32px;
     display: flex;
     align-items: center;
-    font-family: 'Bebas Neue';
     position: sticky;
     top:0;
+}
+
+.navbar *{
+    font-family: 'Bebas Neue';
 }
 
 .logo{
     color: white;
     margin-right: auto;
     font-size: 2.5rem;
-
 }
 
 .navbar > ul {
@@ -182,7 +237,6 @@ tbody td:not(:last-child) /* excludes remove button from padding*/ {
     background-color: var(--color2);
     cursor: pointer;
 }
-
 
 .nav-item > img{
     width: 1.5rem;

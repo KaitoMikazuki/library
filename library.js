@@ -64,7 +64,7 @@ function displayOnPage(){
     const bookList = document.querySelector(".bookList");
     bookList.innerHTML = ""
     myLibrary.forEach((book) => {
-        const status = book.read ? "Read" : "Not read";
+        const status = book.read ? "Read" : "Not Read";
         bookList.insertAdjacentHTML('beforeend', `
             <tr class="book" data-id="${book.id}">
                 <td class="title">${book.title}</td>
