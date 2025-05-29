@@ -5,10 +5,11 @@
 }
 
 html{
-    --color1: #52357B;
-    --color2: #5459AC;
-    --color3: #648DB3;
-    --color4: #B2D8CE;
+    --color1: #7c8cb3;
+    --color2: #6f8fb3;
+    --color3: #6466b3;
+    --table-borders: solid 1px black;
+    --table-spacing:1rem;
 }
 
 a{
@@ -20,6 +21,89 @@ li {
     list-style: none;
 }
 
+body {
+    background-color: var(--color1);
+    color:white;
+}
+
+/* main section */
+.container{
+    margin:24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: ;
+}
+
+/* Table section */
+table{
+    background-color: var(--color2);
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: collapse;
+    border: var(--table-borders);
+}
+/* Table header column widths */
+thead th:nth-child(1){
+    width: 35%;
+}
+thead th:nth-child(2){
+    width: 35%;
+}
+thead th:nth-child(3){
+    width: 12.5%;
+}
+thead th:nth-child(4){
+    width: 12.5%;
+}
+thead th:nth-child(5){
+    width: 5%;
+}
+
+thead th{
+    background-color: #2f3652 ;
+    padding: var(--table-spacing);
+}
+
+tbody td{
+    text-align: center;
+    word-break: break-word;
+}
+tbody tr:nth-child(odd){
+    background-color:  #4a5a78 ;
+}
+tbody td:not(:last-child) /* excludes remove button from padding*/ {
+    padding: var(--table-spacing);
+}
+
+/* Read button */
+.status{
+    border: none;
+    border-radius: 8px;
+    padding: 8px;
+    box-shadow: 0 0 2px black;
+}
+
+.status:active{
+    background-color: lightgray;
+    box-shadow: 0 0 2px inset black;
+}
+
+/* Remove buton */
+.remove{
+    padding: 4px;
+    width: 60%;
+    aspect-ratio: 1/1;
+    border-radius: 8px;
+    border: none;
+    box-shadow: 0 0 2px black;
+}
+
+.remove:active{
+    background-color: lightgray;
+    box-shadow: 0 0 2px inset black;
+}
 
 /* Dialog section */
 .window{
@@ -57,6 +141,8 @@ li {
     border-radius: 8px;
     padding: 0.25rem 0.5rem;
 }
+
+
 
 /* navbar section */
 .navbar{
