@@ -34,7 +34,7 @@ function addBookToLibrary(event){
     const bookData = new FormData(event.target);
 
     // Validates the information being submitted by the user
-    if (!/^[A-Za-z0-9 ]{1,100}$/.test(bookData.get('title'))){
+    if (!/^[A-Za-z0-9 ]{1,200}$/.test(bookData.get('title'))){
         alert("Invalid title");
         return
     }
